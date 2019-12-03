@@ -1,3 +1,4 @@
+
 /**
  * Lambda text/javascript script
  * controllers need to be hard coded within a script tag
@@ -22,6 +23,3 @@ let search_by_fieldname = OC.getORM()
 // console.log(product_with_id_1)
 // console.log(all_products)
 // console.log(search_by_fieldname)
-
-
-    
