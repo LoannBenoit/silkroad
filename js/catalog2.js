@@ -21,7 +21,7 @@ var catalog1 = [{
 },
 {
 	"id": "4",
-	"name": "Je suis Islam",
+	"name": "PC Zenforce",
 	"description": "AMD Ryzen 5 3600 (3.6 GHz) 16 Go SSD 480 Go NVIDIA GeForce RTX 2060 6 Go Wi-FI N (sans OS - non monté)",
 	"image": "images/PC_Zenforce.jpg",
 	"price": "999.95"
