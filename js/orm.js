@@ -126,7 +126,7 @@ class ORM {
             let searchExpression = search;            
             let likeExpression = itemExpression.includes(search);
 
-            if (!cs) {
+            if (cs === false) {
                 itemExpression = item[fieldName].toLowerCase();
                 searchExpression = search.toLowerCase(); 
                 likeExpression = itemExpression.includes(searchExpression);

@@ -20,6 +20,13 @@ let search_by_fieldname = OC.getORM()
     .loadCatalog("catalog_1")
     .findByField("name","Je suis ISLAM")
 
-// console.log(product_with_id_1)
+console.log('findById ------- \n',product_with_id_1)
+console.log('-------');
+
+console.log('findAll ------- \n',all_products)
+console.log('-------');
+
+console.log('findByField ------- \n',search_by_fieldname)
+console.log('-------');
 // console.log(all_products)
 // console.log(search_by_fieldname)
