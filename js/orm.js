@@ -17,13 +17,11 @@ class ORM {
      * @param {Object} catalogs 
      */
     constructor(catalogs) {
-        for (const catalog in catalogs) {
-            if (catalogs.hasOwnProperty(catalog)) {
-                let element = catalogs[catalog];
-                Object.assign(this.catalogs,{
-                    [catalog] : element
-                })                
-            }
+        for (const catalog in catalogs) {            
+            let element = catalogs[catalog];
+            Object.assign(this.catalogs,{
+                [catalog] : element
+            })                
         }
     }   
 
