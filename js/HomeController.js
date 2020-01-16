@@ -39,7 +39,7 @@ class HomeController extends BaseController{
         this.products.then(products => {    
             this.setTemplate('/templates/list.html',{
                 title: 'Hight-Tech',
-                products: products
+                products: products.join('')
             })
             .setRoot('content')
             .apply()
