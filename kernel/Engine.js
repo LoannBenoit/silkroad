@@ -17,8 +17,12 @@ class Engine{
             }
 
             xhr.onload = (ev) => {
-                if (ev.target.status === 200) {                    
-                    resolve(this.createTemplate(ev.target.response,data))
+                if (ev.target.status === 200) {           
+                    let promise = ev.target.response
+                    if (typeof data  !== 'undefined' && Object.keys(data).length > 0) {
+                        promise = this.createTemplate(ev.target.response,data)
+                    } 
+                    resolve(promise)
                 } else {
                     reject({
                         status: ev.target.status,
@@ -31,7 +35,7 @@ class Engine{
     }   
        
     createTemplate(template, data) {
-        
+
         [...template.matchAll(/{{\s*([a-zA-Z0-9]+)\s*}}/gm)].forEach((templateVar) => {
             template = template.split(templateVar[0]).join(data[templateVar[1]])
         })

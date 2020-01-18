@@ -1,5 +1,4 @@
-window.onload = () => {
-
+window.onload = () => {    
     /**
      * window file create scripts tags 
      * when all assets (js, images,css,...) done loading.
@@ -12,9 +11,8 @@ window.onload = () => {
      */
 
     var scripts = [        
-        // example d'imports 
-        // '../assets/lib/js/superanimation.js' 
-        // 'http://animation.javascript/superanimation.min.js'
+        'https://code.jquery.com/jquery-3.4.1.min.js',
+        './js/main.js'
     ]
 
     scripts.forEach((script) => {

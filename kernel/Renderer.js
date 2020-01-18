@@ -10,11 +10,11 @@ class Renderer extends ORM{
         super(catalogs)
     }
 
-    getSnippet(templatePath, data) {
+    getSnippet(templatePath, data = {}) {
         return this.loadTemplateXhr(templatePath,data)
     }
 
-    setTemplate(templatePath, data) {
+    setTemplate(templatePath, data = {}) {
         this.templatePromise = this.loadTemplateXhr(templatePath,data)
         
         return this

@@ -11,39 +11,22 @@ import BaseController from '../kernel/BaseController.js'
 
 class HomeController extends BaseController{
 
-    products = {}
+    title = 'SILKROAD'
 
     constructor() {
         super()
     }
 
     load() {
-
-        let products = this.loadCatalog('all').findAll()    
-
-        this.products =  
-            Promise.all(
-                products.map(async (item) => {
-                    item = await this.getSnippet('/templates/product.html',{
-                        name: item.name,
-                        description: item.description,
-                        image: item.image,
-                        price: item.price
-                    })
-                    return item
-                })
-            )
+        
     }
 
     render() {    
-        this.products.then(products => {    
-            this.setTemplate('/templates/list.html',{
-                title: 'Hight-Tech',
-                products: products.join('')
-            })
-            .setRoot('content')
-            .apply()
+        this.setTemplate('/templates/home.html',{
+            title: this.title
         })
+        .setRoot('content')
+        .apply()        
     }
 
 }
