@@ -1,5 +1,7 @@
 # silkroad / Boutique en ligne :
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bc9bd300-d5d2-4309-b7d6-af8f2b6724c7/deploy-status)](https://app.netlify.com/sites/silkroad/deploys)
+
 - Le contenu de la boutique est construit automatiquement au chargement de la page par rapport à des donnée définies par un catalogue.
 - Différents catalogues doivent pouvoir être utilisés sans que cela modifie le code qui permet le chargement de la page.
 - Dans la boutique, l’utilisateur peut choisir la quantité qu’il souhaite acheter à l’aide d’un champ de saisie.
