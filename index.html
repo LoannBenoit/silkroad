@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <!-- Navigation menu -->
     <nav class="row">
         <div class="backnav col s12">
             <ul id="navMenu" class="tabs col m9">
@@ -29,31 +30,66 @@
 
     </nav>
 
+    <!-- Main part -->
     <div class="row" id="main">
         <div class="col s12">
+            <!-- Part of the cards in the center -->
             <div class="productCards">
-                <div class="productCard1 col s12 m3">
-                    <div class="cardBackground">
+                <div class="productCard col s12 m3">
+                    <div class="cardBackground z-depth-3">
+                        <div class="productName"><p class="productNamePara">Iphone 11 pro Max</p></div>
+                        <div class="productPhoto"><img src="/Images/Banane.jpg" alt="bananePhoto"></div>
+                        <div class="productFooter">
+                            <p class="productPricePara">1659 €</p>
+                            <input type="number" name="amount" value="0" id="productAmount">
+                            <div class="icon">Chariot</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="productCard col s12 m3">
+                    <div class="cardBackground z-depth-3">
                         <div class="productName"></div>
                         <div class="price"></div>
                     </div>
                 </div>
 
                 <div class="productCard col s12 m3">
-                    <div class="cardBackground">
+                    <div class="cardBackground z-depth-3">
                         <div class="productName"></div>
                         <div class="price"></div>
                     </div>
                 </div>
-
-                <div class="productCard col s12 m3">
-                    <div class="cardBackground">
-                        <div class="productName"></div>
-                        <div class="price"></div>
-                    </div>
-                </div>
+                
             </div>
-            <div class="col m2 panier"></div>
+
+            <!-- Part of the cart on the right -->
+            <div class="col m2 panier">
+                <div id= "cartPart" class="row">
+                    <div class="cartTitle col s12"><h4 class="center-align">Panier</h4></div>
+                    <div class="row separatorRow">
+                        <div id="cartSeparator" class="col s12 separator"></div>
+                    </div>
+                </div>
+
+                <div id="productPart" class="row">
+                    <div class="productList"></div>
+                </div>
+               
+
+                <div id="totalPart" class="row">
+                    <div class="cartTotal col s12"><h4 class="center-align">Total</h4></div>
+                    <div class="row separatorRow">
+                        <div id="totalSeparator" class="col s12 separator"></div>
+                    </div>
+                    
+                    <div id="totalRow" class="row">
+                        <div class="totalPrice"><p id="totalPrice" class="center-align">0 €</p></div>
+                    </div>
+                </div>
+
+                
+            </div>
         </div>
     </div>
     </div>
