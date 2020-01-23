@@ -9,7 +9,7 @@ window.onload = () => {
      */
 
     var scripts = [        
-        './js/controller.js'
+        './js/HomeController.js'
     ];
 
     scripts.forEach((script) => {
