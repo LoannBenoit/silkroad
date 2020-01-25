@@ -20,13 +20,26 @@ let search_by_fieldname = OC.getORM()
     .loadCatalog("catalog_1")
     .findByField("name","Je suis ISLAM")
 
-console.log('findById ------- \n',product_with_id_1)
-console.log('-------');
 
-console.log('findAll ------- \n',all_products)
-console.log('-------');
 
-console.log('findByField ------- \n',search_by_fieldname)
-console.log('-------');
-// console.log(all_products)
-// console.log(search_by_fieldname)
+all_products.forEach(element => {
+    console.log(element);
+    
+});
+
+var i = 0;
+all_products.forEach(element => {
+
+$("<div></div>", {id: 'card_'+i, class: 'productCard col s12 m3'}).appendTo("#productCards");
+$("<div></div>", {id: 'cardBackground_'+i, class: 'cardBackground z-depth-3' }).appendTo("#card_"+i);
+$("<div></div>", {id: 'productName_'+i, class: 'productName' }).appendTo("#cardBackground_"+i);
+$("<p></p>", {id: 'productNamePara_'+i, class: 'productNamePara', text: element.name}).appendTo("#productName_"+i);
+$("<div></div>", {id: 'productPhoto_'+i, class: 'productPhoto'}).appendTo("#cardBackground_"+i);
+$("<img>", {src: element.image}).appendTo("#productPhoto_"+i);
+$("<div></div>", {id: 'productFooter_'+i, class: 'productFooter'}).appendTo("#cardBackground_"+i);
+$("<p></p>", {id: 'productPricePara_'+i, class: 'productPricePara', text: element.price + ' €'}).appendTo("#productFooter_"+i);
+$("<input>", {type: 'number', name: 'amount', value: '0', id: 'productAmount'}).appendTo("#productFooter_"+i);
+$("div></div>", {class: 'icon', text: "Chariot"}).appendTo("#productFooter_"+i);
+
+i++;
+});
