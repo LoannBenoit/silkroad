@@ -61,7 +61,7 @@ function loadCatalog(catalogName){
     
     all_products.forEach((element, i) => {
 
-    $("<div></div>", {id: 'card_'+i, class: 'productCard col s12 m3'}).appendTo("#productCards");
+    $("<div></div>", {id: 'card_'+i, class: 'productCard col s12 m4'}).appendTo("#productCards");
     $("<div></div>", {id: 'cardBackground_'+i, class: 'cardBackground z-depth-3' }).appendTo("#card_"+i);
     $("<div></div>", {id: 'productName_'+i, class: 'productName' }).appendTo("#cardBackground_"+i);
     $("<p></p>", {id: 'productNamePara_'+i, class: 'productNamePara', text: element.name}).appendTo("#productName_"+i);
@@ -71,7 +71,6 @@ function loadCatalog(catalogName){
     $("<p></p>", {id: 'productPricePara', class: 'productPricePara', text: element.price + ' €'}).appendTo("#productFooter_"+i);
     $("<input>", {id: 'productAmount', type: 'number', name: 'amount', value: '0'}).appendTo("#productFooter_"+i);
     $("<div></div>", {id: 'chariot_'+i, class: 'icon', text: "Chariot"}).appendTo("#productFooter_"+i);
-
     });
 }
 
