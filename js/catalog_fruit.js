@@ -1,4 +1,4 @@
-var catalog4 = [
+var catalog = [
 	{
 		"id": "1",
 		"name" :  "Pomme",
@@ -42,4 +42,4 @@ var catalog4 = [
 		"price" : "999"
 	}
 ]
-export default catalog4;
+export default catalog;

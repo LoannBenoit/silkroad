@@ -1,4 +1,5 @@
-var catalog1 = [{
+var catalog = [
+{
 	"id": "1",
 	"name": "PC10 Bazooka",
 	"description": "Intel Core i5-9400F (2.9 GHz) 16 Go SSD 480 Go NVIDIA GeForce RTX 2060 6 Go Wi-FI N Windows 10 Famille 64 bits (monté)",
@@ -21,7 +22,7 @@ var catalog1 = [{
 },
 {
 	"id": "4",
-	"name": "PC Zenforce",
+	"name": "AMD Ryzen 5",
 	"description": "AMD Ryzen 5 3600 (3.6 GHz) 16 Go SSD 480 Go NVIDIA GeForce RTX 2060 6 Go Wi-FI N (sans OS - non monté)",
 	"image": "images/PC_Zenforce.jpg",
 	"price": "999.95"
@@ -104,4 +105,4 @@ var catalog1 = [{
 	"price": "79.95"
 }]
 
-export default catalog1;
+export default catalog;

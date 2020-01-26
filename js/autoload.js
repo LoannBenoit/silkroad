@@ -10,16 +10,16 @@
 
 import ORM from "./orm.js";
 
-import catalog1 from "./catalog1.js";
-import catalog2 from "./catalog2.js";
-import catalog4 from "./catalog4.js";
-import catalog from "./catalog.js";
+import catalog_highTech from "./catalog_highTech.js";
+import catalog_fruit from "./catalog_fruit.js";
+import catalog_space from "./catalog_space.js";
+import catalogTest from "./catalog.js";
 
 const catalogs =  {
-    'catalog_1': catalog1,
-    'catalog_2': catalog2,
-    'catalog_4': catalog4,
-    'catalog': catalog
+    'catalog_highTech': catalog_highTech,
+    'catalog_fruit': catalog_fruit,
+    'catalog_space': catalog_space,
+    'catalogTest': catalogTest
 }
 
 Window.ORMClient = new ORM(catalogs);

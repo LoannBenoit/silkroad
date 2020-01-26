@@ -8,38 +8,64 @@
 
 const OC = Window.ORMClient;
 
-let product_with_id_1 = OC.getORM().loadCatalog("catalog_1").findById(1);
-let all_products = OC.getORM().loadCatalog("catalog_1").findAll();
-
-searchOptions = {
-    "cs": false, /* case sensitive */
-    "like": false /* includes %like% */
-}
-
-let search_by_fieldname = OC.getORM()
-    .loadCatalog("catalog_1")
-    .findByField("name","Je suis ISLAM")
+//let product_with_id_1 = OC.getORM().loadCatalog("catalog_highTech").findById(1);
 
 
+// searchOptions = {
+//     "cs": false, /* case sensitive */
+//     "like": false /* includes %like% */
+// }
 
-all_products.forEach(element => {
-    console.log(element);
+// let search_by_fieldname = OC.getORM()
+//     .loadCatalog("catalog_highTech")
+//     .findByField("name","Je suis ISLAM")
+
+
+
+// all_products.forEach(element => {
+//     console.log(element);
     
-});
+// });
 
-var i = 0;
-all_products.forEach(element => {
 
-$("<div></div>", {id: 'card_'+i, class: 'productCard col s12 m3'}).appendTo("#productCards");
-$("<div></div>", {id: 'cardBackground_'+i, class: 'cardBackground z-depth-3' }).appendTo("#card_"+i);
-$("<div></div>", {id: 'productName_'+i, class: 'productName' }).appendTo("#cardBackground_"+i);
-$("<p></p>", {id: 'productNamePara_'+i, class: 'productNamePara', text: element.name}).appendTo("#productName_"+i);
-$("<div></div>", {id: 'productPhoto_'+i, class: 'productPhoto'}).appendTo("#cardBackground_"+i);
-$("<img>", {src: element.image}).appendTo("#productPhoto_"+i);
-$("<div></div>", {id: 'productFooter_'+i, class: 'productFooter'}).appendTo("#cardBackground_"+i);
-$("<p></p>", {id: 'productPricePara_'+i, class: 'productPricePara', text: element.price + ' €'}).appendTo("#productFooter_"+i);
-$("<input>", {type: 'number', name: 'amount', value: '0', id: 'productAmount'}).appendTo("#productFooter_"+i);
-$("div></div>", {class: 'icon', text: "Chariot"}).appendTo("#productFooter_"+i);
 
-i++;
-});
+$( "#catalogFruits" ).click(function() {
+    $("#productCards").empty();
+    loadCatalog("catalog_fruit");
+  });
+
+  $( "#catalogSpace" ).click(function() {
+    $("#productCards").empty();
+    loadCatalog("catalog_space");
+  });
+
+  $( "#catalogHighTech" ).click(function() {
+    $("#productCards").empty();
+    loadCatalog("catalog_highTech");
+  });
+  
+  $( "#catalogTest" ).click(function() {
+    $("#productCards").empty();
+    loadCatalog("catalogTest");
+  });
+
+
+  function loadCatalog(catalogName){
+    let all_products = OC.getORM().loadCatalog(catalogName).findAll();
+    var i = 0;
+    all_products.forEach(element => {
+
+    $("<div></div>", {id: 'card_'+i, class: 'productCard col s12 m3'}).appendTo("#productCards");
+    $("<div></div>", {id: 'cardBackground_'+i, class: 'cardBackground z-depth-3' }).appendTo("#card_"+i);
+    $("<div></div>", {id: 'productName_'+i, class: 'productName' }).appendTo("#cardBackground_"+i);
+    $("<p></p>", {id: 'productNamePara_'+i, class: 'productNamePara', text: element.name}).appendTo("#productName_"+i);
+    $("<div></div>", {id: 'productPhoto_'+i, class: 'productPhoto'}).appendTo("#cardBackground_"+i);
+    $("<img>", {src: element.image}).appendTo("#productPhoto_"+i);
+    $("<div></div>", {id: 'productFooter_'+i, class: 'productFooter'}).appendTo("#cardBackground_"+i);
+    $("<p></p>", {id: 'productPricePara_'+i, class: 'productPricePara', text: element.price + ' €'}).appendTo("#productFooter_"+i);
+    $("<input>", {type: 'number', name: 'amount', value: '0', id: 'productAmount'}).appendTo("#productFooter_"+i);
+    $("div></div>", {class: 'icon', text: "Chariot"}).appendTo("#productFooter_"+i);
+
+    i++;
+    });
+  }
