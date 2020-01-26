@@ -7,7 +7,7 @@
  */
 
 const OC = Window.ORMClient;
-var tabPanier = new Array();
+let tabPanier = new Array();
 
 //let product_with_id_1 = OC.getORM().loadCatalog("catalog_highTech").findById(1);
 
@@ -32,31 +32,34 @@ var tabPanier = new Array();
 $("#productCards").empty();
 loadCatalog("catalog_fruit");
 
-
-$( "#catalogFruits" ).click(function() {
-$("#productCards").empty();
-loadCatalog("catalog_fruit");
+$( "#catalogFruits" ).click(() => {
+    $("#productCards").empty();
+    loadCatalog("catalog_fruit");
 });
 
-$( "#catalogSpace" ).click(function() {
-$("#productCards").empty();
-loadCatalog("catalog_space");
+$( "#catalogSpace" ).click(() => {
+    $("#productCards").empty();
+    loadCatalog("catalog_space");
 });
 
-$( "#catalogHighTech" ).click(function() {
-$("#productCards").empty();
-loadCatalog("catalog_highTech");
+$( "#catalogHighTech" ).click(() => {
+    $("#productCards").empty();
+    loadCatalog("catalog_highTech");
 });
 
-$( "#catalogTest" ).click(function() {
-$("#productCards").empty();
-loadCatalog("catalogTest");
+$( "#catalogTest" ).click(() => {
+    $("#productCards").empty();
+    loadCatalog("catalogTest");
 });
 
 function loadCatalog(catalogName){
+    console.log({catalogName})
+    
     let all_products = OC.getORM().loadCatalog(catalogName).findAll();
-    var i = 0;
-    all_products.forEach(element => {
+    console.log({ all_products })
+    console.log("coucou")
+    
+    all_products.forEach((element, i) => {
 
     $("<div></div>", {id: 'card_'+i, class: 'productCard col s12 m3'}).appendTo("#productCards");
     $("<div></div>", {id: 'cardBackground_'+i, class: 'cardBackground z-depth-3' }).appendTo("#card_"+i);
@@ -69,20 +72,23 @@ function loadCatalog(catalogName){
     $("<input>", {id: 'productAmount', type: 'number', name: 'amount', value: '0'}).appendTo("#productFooter_"+i);
     $("<div></div>", {id: 'chariot_'+i, class: 'icon', text: "Chariot"}).appendTo("#productFooter_"+i);
 
-    i++;
     });
 }
 
 $(".icon").click(function() {
-    var div = "#"+this.id;
-    var quantite = $(div).parents().children("#productAmount").val();
-    var prix = $(div).parents().children("#productPricePara").text();
-    var nom = $("#"+$(div).parents().attr("id")).parents().children(".productName").text();
+    console.log("clicked !")
+    let div = "#"+this.id,
+    quantite = $(div).parents().children("#productAmount").val(),
+    prix = $(div).parents().children("#productPricePara").text(),
+    nom = $("#"+$(div).parents().attr("id")).parents().children(".productName").text();
+
     quantite = parseInt(quantite);
     prix = parseFloat(prix);
 
+    console.log({div, quantite, prix, nom});
+
     if(quantite > 0){
-        addProduct(nom,quantite,prix)
+        addProduct(nom, quantite, prix)
     }
     
 })
