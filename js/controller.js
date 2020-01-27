@@ -63,8 +63,8 @@ function loadCatalog(catalogName){
 
     $("<div></div>", {id: 'card_'+i, class: 'productCard col s12 m4'}).appendTo("#productCards");
     $("<div></div>", {id: 'cardBackground_'+i, class: 'cardBackground z-depth-3' }).appendTo("#card_"+i);
-    $("<div></div>", {id: 'productName_'+i, class: 'productName' }).appendTo("#cardBackground_"+i);
-    $("<p></p>", {id: 'productNamePara_'+i, class: 'productNamePara', text: element.name}).appendTo("#productName_"+i);
+    $("<div></div>", {id: 'productName_'+i, class: 'truncate productName' }).appendTo("#cardBackground_"+i);
+    $("<p></p>", {id: 'productNamePara_'+i, class: 'productNamePara', text: element.name.slice(0, 20)}).appendTo("#productName_"+i);
     $("<div></div>", {id: 'productPhoto_'+i, class: 'productPhoto'}).appendTo("#cardBackground_"+i);
     $("<img>", {src: element.image}).appendTo("#productPhoto_"+i);
     $("<div></div>", {id: 'productFooter_'+i, class: 'productFooter'}).appendTo("#cardBackground_"+i);

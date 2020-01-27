@@ -76,7 +76,7 @@ ul li {
     flex-direction: column;
     margin-top: 20px;
     width: 100%;
-    height: 300;
+    height: 300px;
     background: white;
     border-radius: 25px;
     color: black;
@@ -100,6 +100,7 @@ ul li {
 .productPhoto {
     margin: 0px auto;
     width: 62%;
+    flex: 1;
 }
 
 .productPhoto img {
@@ -117,6 +118,10 @@ ul li {
     color: #525252;
     padding-top: 10px;
     margin: 0px;
+}
+
+.icon:hover {
+    cursor: pointer;
 }
 
 #productAmount {
