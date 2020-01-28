@@ -120,8 +120,20 @@ ul li {
     margin: 0px;
 }
 
+.icon {
+    padding-top: 12px;
+}
+
 .icon:hover {
     cursor: pointer;
+}
+
+.valueNone {
+    fill: #52525234;
+}
+
+.valueMore {
+    fill: #525252;
 }
 
 #productAmount {
