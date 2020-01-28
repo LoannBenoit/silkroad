@@ -9,7 +9,7 @@ import BaseController from '../kernel/BaseController.js'
  * No need to define a window.onload if controller is defined in window file.
  */
 
-class HightTechController extends BaseController{
+class HightTechController extends BaseController {
 
     products = {}
 
@@ -19,12 +19,12 @@ class HightTechController extends BaseController{
 
     load() {
 
-        let products = this.loadCatalog('catalog_2').findAll()    
+        let products = this.loadCatalog('catalog_2').findAll()
 
-        this.products =  
+        this.products =
             Promise.all(
                 products.map(async (item) => {
-                    item = await this.getSnippet('/templates/product.html',{
+                    item = await this.getSnippet('templates/product.html', {
                         name: item.name,
                         description: item.description,
                         image: item.image,
@@ -35,14 +35,14 @@ class HightTechController extends BaseController{
             )
     }
 
-    render() {    
-        this.products.then(products => {    
-            this.setTemplate('/templates/list.html',{
+    render() {
+        this.products.then(products => {
+            this.setTemplate('templates/list.html', {
                 title: 'Hight-Tech',
                 products: products.join('')
             })
-            .setRoot('content')
-            .apply()
+                .setRoot('content')
+                .apply()
         })
     }
 

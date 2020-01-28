@@ -77,12 +77,12 @@ class ORM extends Engine {
      * for a match based on the search parameter and on the options if provided      
      * @return Array<object> - Returns only one object if only one has been found and an array of objects if several
      */
-    
+
     findByField(fieldName, search, options) {
 
         const products = this.selected.filter((item) => {
 
-            let fieldValue = item[fieldName].toLowerCase() 
+            let fieldValue = item[fieldName].toLowerCase()
             let searchValue = search.toLowerCase()
             let matchExpr = fieldValue === searchValue
 

@@ -20,18 +20,18 @@ import catalog3 from './catalog3.js'
 
 import App from '../kernel/App.js'
 
-const catalogs =  {
+const catalogs = {
     'catalog_1': catalog1,
     'catalog_2': catalog2,
     'catalog_3': catalog3,
-    'all': [...catalog1,...catalog2,...catalog3]
+    'all': [...catalog1, ...catalog2, ...catalog3]
 }
 
 const routes = {
-    '/' : HomeController,
-    '/high-tech' : HightTechController,
-    '/fruits' : FruitController,
-    '/vaisseaux' : VaisseauController
+    '/': HomeController,
+    '/high-tech': HightTechController,
+    '/fruits': FruitController,
+    '/vaisseaux': VaisseauController
 }
 
 Window.App = new App()

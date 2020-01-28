@@ -9,7 +9,7 @@ import BaseController from '../kernel/BaseController.js'
  * No need to define a window.onload if controller is defined in window file.
  */
 
-class HomeController extends BaseController{
+class HomeController extends BaseController {
 
     title = 'SILKROAD'
 
@@ -18,15 +18,15 @@ class HomeController extends BaseController{
     }
 
     load() {
-        
+
     }
 
-    render() {    
-        this.setTemplate('/templates/home.html',{
+    render() {
+        this.setTemplate('templates/home.html', {
             title: this.title
         })
-        .setRoot('content')
-        .apply()        
+            .setRoot('content')
+            .apply()
     }
 
 }
