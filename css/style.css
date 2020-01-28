@@ -136,7 +136,7 @@ ul li {
     fill: #525252;
 }
 
-#productAmount {
+.handleAmount {
     padding-left: 20px;
     width: 15%;
     color: #52525234;
@@ -146,12 +146,12 @@ ul li {
     border-bottom: 1px solid #52525234;
 }
 
-#productAmount::-webkit-outer-spin-button, #productAmount::-webkit-inner-spin-button {
+.handleAmount::-webkit-outer-spin-button, .handleAmount::-webkit-inner-spin-button {
     -webkit-appearance: none;
     -moz-appearance: none;
 }
 
-#productAmount:focus {
+.handleAmount:focus {
     border-bottom: 1px solid #FF6863;
 }
 
