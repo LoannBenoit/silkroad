@@ -10,8 +10,7 @@ window.onload = () => {
      * move it up in the Array named scripts below.
      */
 
-    var scripts = [
-        'https://code.jquery.com/jquery-3.4.1.min.js',
+    var scripts = [        
         'js/main.js'
     ]
 
