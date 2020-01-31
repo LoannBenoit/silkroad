@@ -79,7 +79,7 @@ function loadCatalog(catalogName){
     $(".icon").click(function() {
         console.log("clicked !")
         let div = "#"+this.id,
-        quantite = $(div).parents().children("#productAmount").val(),
+        //quantite = $(div).parents().children("#productAmount").val(),
         prix = $(div).parents().children("#productPricePara").text(),
         nom = $("#"+$(div).parents().attr("id")).parents().children(".productName").text();
     
@@ -91,16 +91,21 @@ function loadCatalog(catalogName){
         if(quantite > 0){
             addProduct(nom, quantite, prix)
         }
-        
+        quantite = 0
     })
 
     $(".handleAmount").change(function(ev){
-        console.log(ev);
-        
+       
+        if (Number(ev.target.value) <=9 && Number(ev.target.value)>=0){
+            console.log("OK");
+            quantite = Number(ev.target.value)
+        }else{
+            console.log("NOK");
+            $("#"+this.id).val('0')
+        }
+                
     })
 }
-
-
 
 function addProduct(nom, quantite, prix){
     //console.log(nom+"/"+quantite+"/"+prix);  
@@ -114,7 +119,6 @@ function addProduct(nom, quantite, prix){
             artPresent = true;
         }
     }
-
 
     if (artPresent==false){
         console.log("Nouvel Article");
@@ -133,6 +137,5 @@ function addProduct(nom, quantite, prix){
         prixTotal+=(tabPrix[i]*tabQte[i]);
     }
     $("#totalPrice").html(prixTotal + " €");
-
 
 }
