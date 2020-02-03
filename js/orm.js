@@ -136,11 +136,9 @@ class ORM {
 
         });
 
-        if(products.length > 1) {
-            return products;
-        } else {
-            return products[0];
-        }
+
+        return products;
+       
     }
 }
 
