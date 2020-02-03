@@ -226,7 +226,13 @@ ul li {
     margin-top: 10px;
     bottom: 5%;
 }
+<<<<<<< HEAD
 
 #prod_panier {
     color: #525252;
+=======
+.prod_panier {
+    color : #525252;
+    text-align: center;
+>>>>>>> e86f06f5aafa5a6e7cb524bd055f098a1d317f7d
 }
