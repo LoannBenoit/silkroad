@@ -6155,11 +6155,10 @@ textarea.materialize-textarea {
     padding-left: 20px;
     width: 20%;
     color: #52525234;
-    font-size: 3em;
+    font-size: 2em;
     border-radius: 0px;
     border: none;
     border-bottom: 1px solid #52525234;
-    font-weight: 2em;
 }
 
 input:not([type]):disabled,

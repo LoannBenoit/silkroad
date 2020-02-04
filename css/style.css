@@ -95,12 +95,14 @@ ul li {
     font-size: 1.1em;
     color: #525252;
     margin: 0px;
+    padding-top: 15px;
 }
 
 .productPhoto {
     margin: 0px auto;
-    width: 62%;
-    flex: 1;
+    width: 50%;
+    flex-grow: 2;
+    padding-top: 15px;
 }
 
 .productPhoto img {
@@ -122,6 +124,8 @@ ul li {
 
 .icon {
     padding-top: 12px;
+    fill: #525252;
+    opacity: 25%;
 }
 
 .icon:hover {
