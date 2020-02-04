@@ -132,12 +132,8 @@ ul li {
     cursor: pointer;
 }
 
-.valueNone {
-    fill: #52525234;
-}
-
 .valueMore {
-    fill: #525252;
+    opacity: 100%;
 }
 
 #main input[type=number]:not(.browser-default) .handleAmount {
@@ -231,5 +227,8 @@ ul li {
 
 .prod_panier {
     color: #525252;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
 }
