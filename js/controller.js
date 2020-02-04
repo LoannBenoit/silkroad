@@ -11,7 +11,7 @@ var tabPrix = new Array();
 var tabQte = new Array();
 var tabNom = new Array();
 var prixTotal =0;
-let search_by_fieldname
+//let search_by_fieldname
 //let product_with_id_1 = OC.getORM().loadCatalog("catalog_highTech").findById(1);
 
 
@@ -23,13 +23,12 @@ let search_by_fieldname
 
 $("#searchBar").change(function(){
     console.log("search");
-    // search_by_fieldname = OC.getORM()
-    // .loadCatalog("catalog_highTech")
-    // .findByField("name","PC");
-    // search_by_fieldname.forEach(element => {
-    //     console.log(element);
-        
-    // })
+    let search_by_fieldname = OC.getORM()
+    .loadCatalog("all")
+    .findByField("name",this.value, {like: true});
+    console.log(search_by_fieldname);
+    $("#productCards").empty();
+    loadCatalog(search_by_fieldname)
 })
 
 // all_products.forEach(element => {
@@ -39,36 +38,32 @@ $("#searchBar").change(function(){
 
 //Chargement du premier catalogue au démarage
 $("#productCards").empty();
-loadCatalog("catalog_highTech");
+loadCatalog(OC.getORM().loadCatalog("catalog_highTech").findAll());
 
 $( "#catalogFruits" ).click(() => {
     $("#productCards").empty();
-    loadCatalog("catalog_fruit");
+    loadCatalog(OC.getORM().loadCatalog("catalog_fruit").findAll());
 });
 
 $( "#catalogSpace" ).click(() => {
     $("#productCards").empty();
-    loadCatalog("catalog_space");
+    loadCatalog(OC.getORM().loadCatalog("catalog_space").findAll());
 });
 
 $( "#catalogHighTech" ).click(() => {
     $("#productCards").empty();
-    loadCatalog("catalog_highTech");
+    loadCatalog(OC.getORM().loadCatalog("catalog_highTech").findAll());
 });
 
 $( "#catalogTest" ).click(() => {
     $("#productCards").empty();
-    loadCatalog("catalogTest");
+    loadCatalog(OC.getORM().loadCatalog("catalogTest").findAll());
 });
 
-function loadCatalog(catalogName){
-    console.log({catalogName})
+function loadCatalog(products = []){
+    //console.log({products})
     
-    let all_products = OC.getORM().loadCatalog(catalogName).findAll();
-    console.log({ all_products })
-    //console.log("coucou")
-    
-    all_products.forEach((element, i) => {
+    products.forEach((element, i) => {
 
     $("<div></div>", {id: 'card_'+i, class: 'productCard col s12 m4'}).appendTo("#productCards");
     $("<div></div>", {id: 'cardBackground_'+i, class: 'cardBackground z-depth-3' }).appendTo("#card_"+i);
@@ -96,6 +91,7 @@ function loadCatalog(catalogName){
         //console.log({div, quantite, prix, nom});
         if(quantite > 0){
             addProduct(nom, quantite, prix)
+            console.log($(div).parents().children("#productAmount").val());
         }
         quantite = 0
     })

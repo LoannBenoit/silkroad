@@ -19,7 +19,8 @@ const catalogs =  {
     'catalog_highTech': catalog_highTech,
     'catalog_fruit': catalog_fruit,
     'catalog_space': catalog_space,
-    'catalogTest': catalogTest
+    'catalogTest': catalogTest,
+    'all': [...catalogTest, ...catalog_fruit, ...catalog_highTech, ...catalog_space]
 }
 
 Window.ORMClient = new ORM(catalogs);
