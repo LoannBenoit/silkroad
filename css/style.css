@@ -53,6 +53,7 @@ ul li {
     border-radius: 25px;
     border: 1px solid #FF6863;
     padding-left: 15px;
+    font-weight: 2em;
 }
 
 #searchBar:focus {
@@ -138,8 +139,7 @@ ul li {
 }
 
 #main input[type=number]:not(.browser-default) .handleAmount {
-    padding-left: 20px;
-    width: 15%;
+    width: 20%;
     color: #52525234;
     font-size: 3em;
     border-radius: 0px;
@@ -147,8 +147,8 @@ ul li {
     border-bottom: 1px solid #52525234;
 }
 
-#productAmount::-webkit-outer-spin-button,
-#productAmount::-webkit-inner-spin-button {
+.handleAmount::-webkit-outer-spin-button,
+.handleAmount::-webkit-inner-spin-button {
     -webkit-appearance: none;
     -moz-appearance: none;
 }
@@ -226,13 +226,8 @@ ul li {
     margin-top: 10px;
     bottom: 5%;
 }
-<<<<<<< HEAD
 
-#prod_panier {
-    color: #525252;
-=======
 .prod_panier {
-    color : #525252;
+    color: #525252;
     text-align: center;
->>>>>>> e86f06f5aafa5a6e7cb524bd055f098a1d317f7d
 }

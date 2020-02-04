@@ -6149,14 +6149,17 @@ input[type=datetime-local]:not(.browser-default),
 input[type=tel]:not(.browser-default),
 input[type=number]:not(.browser-default),
 input[type=search]:not(.browser-default),
+#searchBar,
 textarea.materialize-textarea {
+    margin-bottom: 10px;
     padding-left: 20px;
-    width: 15%;
+    width: 20%;
     color: #52525234;
     font-size: 3em;
     border-radius: 0px;
     border: none;
     border-bottom: 1px solid #52525234;
+    font-weight: 2em;
 }
 
 input:not([type]):disabled,
