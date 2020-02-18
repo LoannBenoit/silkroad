@@ -6159,6 +6159,7 @@ textarea.materialize-textarea {
     border-radius: 0px;
     border: none;
     border-bottom: 1px solid #52525234;
+    outline: none;
 }
 
 input:not([type]):disabled,
